@@ -30,7 +30,7 @@ function handleTicketChange(ticketType, isIncrease) {
 
     ticketInput.value = ticketCountNew;
 
-    calculateTotal()
+    calculateTotal();
 }
 
 // Calculate
@@ -41,15 +41,26 @@ function calculateTotal() {
     const economyInput = document.getElementById('economy-input');
     const economyCount = parseInt(economyInput.value);
 
-    let firstClassTotal = 150 * firstClassCount || 0;
-    let economyTotal = 100 * economyCount || 0;
+    let firstClassTotal = 0;
+    let economyTotal = 0;
+    if (firstClassCount < 0) {
+        alert('Input must be an integer.');
+    } else {
+        firstClassTotal = 150 * firstClassCount || 0;
+    }
+
+    if (economyCount < 0) {
+
+    } else {
+        economyTotal = 100 * economyCount || 0;
+    }
+
 
     let subtotal = firstClassTotal + economyTotal;
     document.getElementById('subtotal').innerText = '$' + subtotal.toLocaleString('en');
 
     let vat = Math.round(subtotal * .10);
     document.getElementById('vat').innerText = '$' + vat.toLocaleString('en');
-
 
     let total = subtotal + vat;
     document.getElementById('total').innerText = '$' + total.toLocaleString('en');
@@ -59,10 +70,10 @@ function calculateTotal() {
 // Calculate on change input
 function calculateOnChange(ticketType) {
     document.getElementById(ticketType + '-input').addEventListener('change', function () {
-        calculateTotal()
-
-    })
+        calculateTotal();
+    });
 }
+
 calculateOnChange('first-class');
 calculateOnChange('economy');
 
@@ -81,13 +92,15 @@ document.getElementById('submit-btn').addEventListener('click', function () {
     const economyInput = document.getElementById('economy-input');
     const economyCount = parseInt(economyInput.value);
 
-    if ((flyingForm && flyingTo && departureDate && returnDate) && (firstClassCount || economyCount)) {
-        document.getElementById('booking-form').style.display = 'none'
-        document.getElementById('success-feedback').style.display = 'block'
+    if (firstClassCount < 0 || economyCount < 0) {
+        alert('Number input must be an integer.')
+    } else if ((flyingForm && flyingTo && departureDate && returnDate) && (firstClassCount || economyCount)) {
+        document.getElementById('booking-form').style.display = 'none';
+        document.getElementById('success-feedback').style.display = 'block';
     } else {
-        alert("All input required!")
+        alert("All input required!");
     }
-})
+});
 
 
 // rest Button Action
@@ -95,4 +108,4 @@ document.getElementById('reset-btn').addEventListener('click', function () {
     document.getElementById('subtotal').innerText = '$0';
     document.getElementById('vat').innerText = '$0';
     document.getElementById('total').innerText = '$0';
-})
+});

@@ -57,7 +57,7 @@ nav ul li a:hover, a.active{
     display: none;
 }
 
-.success-feedback a {
+.success-feedback button {
     background-color: green;
     margin-top: 50px;
 }
