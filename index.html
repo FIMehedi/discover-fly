@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Header and Menu Section-->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="active" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Booking Section-->
+    <main class="main-content container">
+        <form class="booking-form" id="booking-form">
+            <h3>Booking Flights</h3>
+            <div class="inputs">
+                <div class="input-group">
+                    <label for="">Flying From</label>
+                    <input id="flying-from" class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
+                </div>
+                <div class="input-group">
+                    <label for="">Flying To</label>
+                    <input id="flying-to" class="inp-style" type="text" name="" placeholder="New York, United States">
+                </div>
+            </div>
+            <div class="inputs">
+                <div class="input-group">
+                    <label" for="">Departure</label>
+                        <input id="departure" class="inp-style" type="date" name="">
+                </div>
+                <div class="input-group">
+                    <label for="">Return</label>
+                    <input id="return" class="inp-style" type="date" name="">
+                </div>
+            </div>
+
+            <div class="input-group">
+
+                <label for="">First Class ($150)</label>
+
+                <div class="f-class">
+                    <i id="first-class-decrement" class='bx bx-minus'></i>
+                    <input id="first-class-input" class="inp-style inp-width" type="number" name="" min="0" value="0">
+                    <i id="first-class-increment" class='bx bx-plus'></i>
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label for="">Economy ($100)</label>
+
+                <div class="f-class">
+                    <i id="economy-decrement" class='bx bx-minus'></i>
+                    <input id="economy-input" class="inp-style inp-width" type="number" name="" min="0" value="0">
+                    <i id="economy-increment" class='bx bx-plus'></i>
+                </div>
+
+            </div>
+
+            <div class="calculations">
+                <div class="amount">
+                    <div class="left">
+                        <p>Subtotal</p>
+                    </div>
+                    <div class="right">
+                        <p id="subtotal">$0</p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <p>Charge 10% VAT</p>
+                    </div>
+                    <div class="right">
+                        <p id="vat">$0</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <p id="total">$0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="f-class">
+                <button id="reset-btn" class="btn-style reset" type="reset">Reset</button>
+                <button id="submit-btn" class="btn-style submit" type="button">Book Now</button>
+            </div>
+        </form>
+        <div class="success-feedback" id="success-feedback">
+            <h3 style="text-align: center;">Your Purchased successfully done!</h3>
+            <a href="/" class="btn-style" style="text-align: center;">Go Back</a>
+        </div>
+
+        <div class="booking-content">
+            <h1>discover <br> around the world</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias
+                veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise
+                voluptatibus quam</p>
+        </div>
+    </main>
+
+    <!--Thank You-->
+    <script src="script/main.js"></script>
+</body>
+
+</html>
